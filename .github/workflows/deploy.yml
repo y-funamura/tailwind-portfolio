@@ -9,7 +9,7 @@ on:
 jobs:
   build-deploy:
     # ubuntu OS を仮想マシン上に用意する
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
