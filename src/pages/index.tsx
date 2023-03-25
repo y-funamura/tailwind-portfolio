@@ -438,7 +438,7 @@ export default function Home() {
         // 画像の場合、読み込み完了のフラグを管理するreadCompleteを設定する
         readComplete={readComplete}
       >
-        <Image
+        <img
           src="https://www.pakutaso.com/shared/img/thumb/sikun_20220402-180657-2_TP_V.jpg"
           alt=""
           // 画像の読み込みが完了したらフラグをtrueにする

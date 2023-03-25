@@ -40,10 +40,10 @@ const Slider: FC<{ props: img[] }> = ({ props = ["img"] }) => {
         {images.map((imgStr, i) => {
           return (
             <SplideSlide key={i}>
-              <Image
+              <img
                 key={i}
                 className="slide-img object-contain m-auto"
-                layout="fill"
+                // layout="fill"
                 src={imgStr}
                 alt=""
               />
