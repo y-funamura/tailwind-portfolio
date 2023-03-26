@@ -17,6 +17,8 @@ export default function Home() {
   // const router = useRouter();
   // const hrefContact: string = "/page/mail";
 
+  const dir = String(process.env.BACKEND_URL);
+
   const frontEndDatas: Data[] = [
     { skill: "React", value: 3 },
     { skill: "Java Script", value: 3 },
@@ -34,12 +36,12 @@ export default function Home() {
   ];
 
   const portfolioImg: imgs = [
-    "/img/portfolio1.bmp",
-    "/img/portfolio2.bmp",
-    "/img/portfolio3.bmp",
+    dir + "/img/portfolio1.bmp",
+    dir + "/img/portfolio2.bmp",
+    dir + "/img/portfolio3.bmp",
   ];
 
-  const chatImg: imgs = ["/img/chat1.bmp", "/img/chat2.bmp"];
+  const chatImg: imgs = [dir + "/img/chat1.bmp", dir + "/img/chat2.bmp"];
 
   const [headerClassNm, setHeaderClassNm] = useState(
     "z-30 sticky top-0 bg-opacity-50 bg-blue-100 text-gray-700 h-16"

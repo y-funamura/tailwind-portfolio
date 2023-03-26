@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const dir = String(process.env.BACKEND_URL);
 module.exports = {
   mode: "jit",
   content: [
