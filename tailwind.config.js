@@ -26,9 +26,9 @@ module.exports = {
     },
     extend: {
       backgroundImage: (theme) => ({
-        "portfolio-img": "url('/img/portfolio_main.png')",
-        "portfolio-img": "url('/img/portfolio_main.png')",
-        "chat-img": "url('/img/chat_main.png')",
+        "portfolio-img": "url('${dir}/img/portfolio_main.png')",
+        "portfolio-img": "url('${dir}/img/portfolio_main.png')",
+        "chat-img": "url('${dir}/img/chat_main.png')",
       }),
       animation: {
         slideIn: "slideIn 1s ease-in forwards",
