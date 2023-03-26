@@ -18,7 +18,7 @@ export default function Home() {
   // const hrefContact: string = "/page/mail";
 
   const prod = process.env.NODE_ENV === "production";
-  const BACKEND_URL = prod ? "/repository-Name" : "";
+  const BACKEND_URL = prod ? "/tailwind-portfolio" : "";
   const dir = String(BACKEND_URL);
 
   const frontEndDatas: Data[] = [
