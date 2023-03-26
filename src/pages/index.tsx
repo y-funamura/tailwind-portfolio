@@ -91,7 +91,7 @@ export default function Home() {
           <a
             href="#"
             className="mx-2 text-gray-900 font-bold
-           animate-rotate-in-center text-center"
+            animate-rotate-in-center text-center"
           >
             <div className="">
               <h1 className="text-indigo-700 tracking-tight sm:text-3xl text-lg">
@@ -100,41 +100,43 @@ export default function Home() {
               <h2 className="md:text-lg text-sm">P o r t f o l i o</h2>
             </div>
           </a>
-          <nav
-            className="flex justify-end md:ml-auto
-           text-base h-16"
-          >
+          <nav className="flex justify-end md:ml-auto text-base h-16">
             <a
               href="#"
-              className=" hover:text-white hover:text-base
-             hover:bg-green-400 duration-700 ease-out flex items-center"
+              className=" hover:text-white 
+            hover:bg-green-400 hover:shadow-black hover:shadow-sm  hover:font-black
+              duration-700 ease-out flex items-center"
             >
               <div className="md:px-6 px-3 w-full">Home</div>
             </a>
             <a
               href="#about"
-              className=" hover:text-white hover:text-base
-              hover:bg-green-400 duration-700 ease-out flex items-center"
+              className=" hover:text-white
+            hover:bg-green-400 hover:shadow-black hover:shadow-sm  hover:font-black
+              duration-700 ease-out flex items-center"
             >
               <div className="md:px-6 px-3">About</div>
             </a>
             <a
               href="#works"
-              className=" hover:text-white hover:text-base
-              hover:bg-green-400 duration-700 ease-out flex items-center"
+              className=" hover:text-white 
+            hover:bg-green-400 hover:shadow-black hover:shadow-sm  hover:font-black
+              duration-700 ease-out flex items-center"
             >
               <div className="md:px-6 px-3">Works</div>
             </a>
             <a
               href="#skill"
-              className="  hover:text-white hover:text-base
-              hover:bg-green-400 duration-700 ease-out flex items-center"
+              className="  hover:text-white 
+              hover:bg-green-400 hover:shadow-black hover:shadow-sm  hover:font-black
+              duration-700 ease-out flex items-center"
             >
               <div className="md:px-6 px-3">Skills</div>
             </a>
             <a
               className=" hover:text-white hover:text-base hover:cursor-pointer
-              hover:bg-green-400 duration-700 ease-out flex items-center"
+            hover:bg-green-400 hover:shadow-black hover:shadow-sm  hover:font-black
+              duration-700 ease-out flex items-center"
               onClick={() => modalClick("Contact")}
             >
               <div className="md:px-6 px-3">
@@ -156,12 +158,12 @@ export default function Home() {
       <section
         id="about"
         className="text-gray-700 bg-blue-100 flex flex-col items-center justify-center
-         min-w-full min-h-screen "
+        min-w-full min-h-screen "
       >
         <div className="my-4 max-w-md sm:max-w-3xl">
           <h1
             className="sm:text-5xl text-3xl mb-6 font-medium
-           text-gray-900 js-show-on-scroll text-center"
+          text-gray-900 js-show-on-scroll text-center"
           >
             About Me
           </h1>
@@ -309,7 +311,7 @@ export default function Home() {
         <div className="lg:w-2/5 w-10/12 lg:m-6 mt-6 text-white">
           <h1 className="mb-6 font-bold text-xl">チャットアプリ</h1>
           <p className="mb-6">
-            Firebaseを使用して、Googleアカウントでログイン認証と
+            Firebaseを使用して、Googleアカウントでのログイン認証と
             チャット機能を実装しました。 デザインはMaterial
             UIを使用しております。
           </p>
@@ -363,7 +365,7 @@ export default function Home() {
         <div className="my-4 max-w-md sm:max-w-3xl">
           <h1
             className="sm:text-5xl text-3xl mb-6 font-medium
-                      text-gray-900 js-show-on-scroll text-center"
+            text-gray-900 js-show-on-scroll text-center"
           >
             My Skills
           </h1>
@@ -379,7 +381,7 @@ export default function Home() {
             積極的に経験を積んで専門性を高めていきたいと考えています。
           </p>
         </div>
-        <div className="flex items-center justify-center xl:flex-row flex-col mb-6">
+        <div className="flex items-center justify-center xl:flex-row flex-col mb-3">
           <div className="">
             <RadarChartSkill
               datas={frontEndDatas}

@@ -110,97 +110,98 @@ const Mail: FC<MailType> = ({
           // style={customStyles}
           // onAfterOpen={afterOpenModal}
           onRequestClose={modalClick}
-          className="flex items-center justify-center bg-blue-100  w-full h-full"
+          className="flex items-center justify-center bg-white w-full h-full"
         >
-          <div className="container">
+          {/* <div className="container">
             <div
               className="max-w-md mx-auto my-8
-         bg-white p-5 rounded-md shadow-sm"
-            >
-              <div className="text-center">
-                <h2 className="my-3 text-3xl font-semibold text-gray-700">
-                  お問合せフォーム
-                </h2>
-              </div>
-              <div className="m-3">
-                <form
-                  onSubmit={(e: React.FormEvent<HTMLFormElement>) =>
-                    handleSubmit(e)
-                  }
-                >
-                  <div className="mb-4">
-                    <label
-                      className="block mb-2 text-sm text-gray-600"
-                      htmlFor="name"
-                    >
-                      ■お名前
-                      <span className="text-xs text-red-500">(必須)</span>
-                    </label>
-                    <input
-                      type="text"
-                      className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
-                      id="name"
-                      required
-                      ref={nameRef}
-                      placeholder="田中　太郎"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label
-                      className="block mb-2 text-sm text-gray-600"
-                      htmlFor="email"
-                    >
-                      ■メールアドレス
-                      <span className="text-xs text-red-500">(必須)</span>
-                    </label>
-                    <input
-                      type="email"
-                      className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
-                      id="email"
-                      required
-                      ref={emailRef}
-                      placeholder="john@example.com"
-                    />
-                  </div>
-                  <div className="mb-4">
-                    <label
-                      className="block mb-2 text-sm text-gray-600"
-                      htmlFor="message"
-                    >
-                      ■内容
-                      <span className="text-xs text-red-500">(必須)</span>
-                    </label>
-                    <textarea
-                      className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
-                      id="message"
-                      required
-                      ref={messageRef}
-                      rows={5}
-                      placeholder="お問い合わせ内容です"
-                    ></textarea>
-                  </div>
-                  <div className="mb-4">
-                    <button
-                      type="submit"
-                      className="w-full px-3 py-2 font-bold text-white bg-green-500
-                   rounded-md focus:bg-green-600 focus:outline-none"
-                    >
-                      メール送信
-                    </button>
-                    <button
-                      className="w-full mt-3 px-3 py-2 font-bold text-white bg-gray-500
-                   rounded-md focus:bg-gray-600 focus:outline-none"
-                      onClick={modalClick}
-                    >
-                      閉じる
-                    </button>
-                    {completeMessage.length === 0 ? null : (
-                      <p className="text-red-400 mt-3">{completeMessage}</p>
-                    )}
-                  </div>
-                </form>
-              </div>
+            bg-blue-100 p-5 rounded-md shadow-sm"
+            > */}
+          <div className="p-6 w-[28rem] bg-blue-100 rounded-xl shadow-lg shadow-slate-500">
+            <div className="text-center">
+              <h2 className="my-3 text-3xl font-semibold text-gray-700">
+                お問合せフォーム
+              </h2>
             </div>
+
+            <form
+              onSubmit={(e: React.FormEvent<HTMLFormElement>) =>
+                handleSubmit(e)
+              }
+            >
+              <div className="mb-4">
+                <label
+                  className="block mb-2 text-sm text-gray-600"
+                  htmlFor="name"
+                >
+                  ■お名前
+                  <span className="text-xs text-red-500">(必須)</span>
+                </label>
+                <input
+                  type="text"
+                  className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                  id="name"
+                  required
+                  ref={nameRef}
+                  placeholder="田中　太郎"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block mb-2 text-sm text-gray-600"
+                  htmlFor="email"
+                >
+                  ■メールアドレス
+                  <span className="text-xs text-red-500">(必須)</span>
+                </label>
+                <input
+                  type="email"
+                  className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                  id="email"
+                  required
+                  ref={emailRef}
+                  placeholder="john@example.com"
+                />
+              </div>
+              <div className="mb-4">
+                <label
+                  className="block mb-2 text-sm text-gray-600"
+                  htmlFor="message"
+                >
+                  ■内容
+                  <span className="text-xs text-red-500">(必須)</span>
+                </label>
+                <textarea
+                  className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                  id="message"
+                  required
+                  ref={messageRef}
+                  rows={5}
+                  placeholder="お問い合わせ内容です"
+                ></textarea>
+              </div>
+              <div className="mb-4">
+                <button
+                  type="submit"
+                  className="w-full px-3 py-2 font-bold text-white bg-green-500
+                   rounded-md focus:bg-green-600 focus:outline-none hover:bg-green-400 "
+                >
+                  メール送信
+                </button>
+                <button
+                  className="w-full mt-3 px-3 py-2 font-bold text-white bg-gray-500
+                   rounded-md focus:bg-gray-600 focus:outline-none hover:bg-gray-400 "
+                  onClick={modalClick}
+                >
+                  閉じる
+                </button>
+                {completeMessage.length === 0 ? null : (
+                  <p className="text-red-400 mt-3">{completeMessage}</p>
+                )}
+              </div>
+            </form>
+            {/* </div>
+            </div> */}
           </div>
         </Modal>
       ) : (
