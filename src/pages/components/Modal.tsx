@@ -32,7 +32,7 @@ const Modal: FC<ModalType> = ({ children, modalClick, readComplete }) => {
         id={MODAL_ID}
         closeTimeoutMS={200}
         className={{
-          base: "content-base overflow-auto lg:h-2/3 h-5/6",
+          base: "content-base overflow-auto  lg:h-2/3 h-5/6",
           afterOpen: "content-after",
           beforeClose: "content-before",
         }}

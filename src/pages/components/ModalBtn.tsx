@@ -3,16 +3,18 @@ import { FC, ReactNode } from "react";
 //　モーダル要素
 type ModalBtnType = {
   children?: ReactNode;
-  modalBtnName: string;
+  // modalBtnName: string;
+  className: string;
   modalClick: (event: any) => void;
 };
 
-const ModalBtn: FC<ModalBtnType> = ({ children, modalBtnName, modalClick }) => {
+const ModalBtn: FC<ModalBtnType> = ({ children, className, modalClick }) => {
+  // const ModalBtn: FC<ModalBtnType> = ({ children, modalBtnName,className, modalClick }) => {
   return (
     <>
       <button
-        className="mt-3 text-green-500 flex items-center"
-        name={modalBtnName}
+        className={className}
+        // name={modalBtnName}
         onClick={modalClick}
       >
         {children}

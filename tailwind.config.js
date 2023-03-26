@@ -24,6 +24,11 @@ module.exports = {
       custom: "10px 10px 50px rgba(0, 0, 0, 0.2)",
     },
     extend: {
+      backgroundImage: (theme) => ({
+        "portfolio-img": "url('/img/portfolio_main.png')",
+        "portfolio-img": "url('/img/portfolio_main.png')",
+        "chat-img": "url('/img/chat_main.png')",
+      }),
       animation: {
         slideIn: "slideIn 1s ease-in forwards",
         "rotate-in-center":

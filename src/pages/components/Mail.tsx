@@ -8,14 +8,21 @@ import Modal from "react-modal";
 
 // const inter = Inter({submits:["latin"]});
 
-type MailProps = {
+type MailType = {
+  targetName: string;
   modalOpen: boolean;
+  modalName: string;
   modalClick: (event: any) => void;
 };
-
 // export const MODAL_ID = "modal";
 
-const Mail: FC<MailProps> = ({ modalOpen, modalClick }) => {
+const Mail: FC<MailType> = ({
+  targetName,
+  modalOpen,
+  modalName,
+  modalClick,
+}) => {
+  // { modalOpen, modalClick }) => {
   const isModalOpen: boolean = modalOpen;
   // useModalScrollLock({ isModalOpen });
 
@@ -94,106 +101,113 @@ const Mail: FC<MailProps> = ({ modalOpen, modalClick }) => {
   };
 
   return (
-    <Modal
-      // id={MODAL_ID}
-      contentLabel="問合せフォーム"
-      isOpen={isModalOpen}
-      // style={customStyles}
-      // onAfterOpen={afterOpenModal}
-      onRequestClose={modalClick}
-      className="flex items-center justify-center bg-blue-100  w-full h-full"
-    >
-      <div className="container">
-        <div
-          className="max-w-md mx-auto my-8
-         bg-white p-5 rounded-md shadow-sm"
+    <>
+      {modalOpen && modalName === targetName ? (
+        <Modal
+          // id={MODAL_ID}
+          contentLabel="問合せフォーム"
+          isOpen={isModalOpen}
+          // style={customStyles}
+          // onAfterOpen={afterOpenModal}
+          onRequestClose={modalClick}
+          className="flex items-center justify-center bg-blue-100  w-full h-full"
         >
-          <div className="text-center">
-            <h2 className="my-3 text-3xl font-semibold text-gray-700">
-              お問合せフォーム
-            </h2>
-          </div>
-          <div className="m-3">
-            <form
-              onSubmit={(e: React.FormEvent<HTMLFormElement>) =>
-                handleSubmit(e)
-              }
+          <div className="container">
+            <div
+              className="max-w-md mx-auto my-8
+         bg-white p-5 rounded-md shadow-sm"
             >
-              <div className="mb-4">
-                <label
-                  className="block mb-2 text-sm text-gray-600"
-                  htmlFor="name"
-                >
-                  ■お名前
-                  <span className="text-xs text-red-500">(必須)</span>
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
-                  id="name"
-                  required
-                  ref={nameRef}
-                  placeholder="田中　太郎"
-                />
+              <div className="text-center">
+                <h2 className="my-3 text-3xl font-semibold text-gray-700">
+                  お問合せフォーム
+                </h2>
               </div>
-              <div className="mb-4">
-                <label
-                  className="block mb-2 text-sm text-gray-600"
-                  htmlFor="email"
+              <div className="m-3">
+                <form
+                  onSubmit={(e: React.FormEvent<HTMLFormElement>) =>
+                    handleSubmit(e)
+                  }
                 >
-                  ■メールアドレス
-                  <span className="text-xs text-red-500">(必須)</span>
-                </label>
-                <input
-                  type="email"
-                  className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
-                  id="email"
-                  required
-                  ref={emailRef}
-                  placeholder="john@example.com"
-                />
-              </div>
-              <div className="mb-4">
-                <label
-                  className="block mb-2 text-sm text-gray-600"
-                  htmlFor="message"
-                >
-                  ■内容
-                  <span className="text-xs text-red-500">(必須)</span>
-                </label>
-                <textarea
-                  className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
-                  id="message"
-                  required
-                  ref={messageRef}
-                  rows={5}
-                  placeholder="お問い合わせ内容です"
-                ></textarea>
-              </div>
-              <div className="mb-4">
-                <button
-                  type="submit"
-                  className="w-full px-3 py-2 font-bold text-white bg-green-500
+                  <div className="mb-4">
+                    <label
+                      className="block mb-2 text-sm text-gray-600"
+                      htmlFor="name"
+                    >
+                      ■お名前
+                      <span className="text-xs text-red-500">(必須)</span>
+                    </label>
+                    <input
+                      type="text"
+                      className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                      id="name"
+                      required
+                      ref={nameRef}
+                      placeholder="田中　太郎"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label
+                      className="block mb-2 text-sm text-gray-600"
+                      htmlFor="email"
+                    >
+                      ■メールアドレス
+                      <span className="text-xs text-red-500">(必須)</span>
+                    </label>
+                    <input
+                      type="email"
+                      className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                      id="email"
+                      required
+                      ref={emailRef}
+                      placeholder="john@example.com"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label
+                      className="block mb-2 text-sm text-gray-600"
+                      htmlFor="message"
+                    >
+                      ■内容
+                      <span className="text-xs text-red-500">(必須)</span>
+                    </label>
+                    <textarea
+                      className="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300"
+                      id="message"
+                      required
+                      ref={messageRef}
+                      rows={5}
+                      placeholder="お問い合わせ内容です"
+                    ></textarea>
+                  </div>
+                  <div className="mb-4">
+                    <button
+                      type="submit"
+                      className="w-full px-3 py-2 font-bold text-white bg-green-500
                    rounded-md focus:bg-green-600 focus:outline-none"
-                >
-                  メール送信
-                </button>
-                <button
-                  className="w-full mt-3 px-3 py-2 font-bold text-white bg-gray-500
+                    >
+                      メール送信
+                    </button>
+                    <button
+                      className="w-full mt-3 px-3 py-2 font-bold text-white bg-gray-500
                    rounded-md focus:bg-gray-600 focus:outline-none"
-                  onClick={modalClick}
-                >
-                  閉じる
-                </button>
-                {completeMessage.length === 0 ? null : (
-                  <p className="text-red-400 mt-3">{completeMessage}</p>
-                )}
+                      onClick={modalClick}
+                    >
+                      閉じる
+                    </button>
+                    {completeMessage.length === 0 ? null : (
+                      <p className="text-red-400 mt-3">{completeMessage}</p>
+                    )}
+                  </div>
+                </form>
               </div>
-            </form>
+            </div>
           </div>
-        </div>
-      </div>
-    </Modal>
+        </Modal>
+      ) : (
+        // </ModalPortal>
+        ""
+      )}
+    </>
   );
 };
 
