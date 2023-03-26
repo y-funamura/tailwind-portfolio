@@ -18,7 +18,7 @@ export default function Home() {
   // const hrefContact: string = "/page/mail";
 
   const prod = process.env.NODE_ENV === "production";
-  const BACKEND_URL = prod ? "/tailwind-portfolio" : "";
+  const BACKEND_URL = prod ? "/tailwind-portfolio/" : "";
   const dir = String(BACKEND_URL);
 
   const frontEndDatas: Data[] = [
@@ -38,12 +38,12 @@ export default function Home() {
   ];
 
   const portfolioImg: imgs = [
-    dir + "/img/portfolio1.bmp",
-    dir + "/img/portfolio2.bmp",
-    dir + "/img/portfolio3.bmp",
+    dir + "img/portfolio1.bmp",
+    dir + "img/portfolio2.bmp",
+    dir + "img/portfolio3.bmp",
   ];
 
-  const chatImg: imgs = [dir + "/img/chat1.bmp", dir + "/img/chat2.bmp"];
+  const chatImg: imgs = [dir + "img/chat1.bmp", dir + "img/chat2.bmp"];
 
   const [headerClassNm, setHeaderClassNm] = useState(
     "z-30 sticky top-0 bg-opacity-50 bg-blue-100 text-gray-700 h-16"

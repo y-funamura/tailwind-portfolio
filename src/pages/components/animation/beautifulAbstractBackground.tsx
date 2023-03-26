@@ -120,7 +120,7 @@ const Block = (props: BlockProps) => {
       targets: ".block-anime",
       translateX: () => anime.random(rangeX[0], rangeX[1]),
       translateY: () => anime.random(rangeY[0], rangeY[1]),
-      scale: () => anime.random(1, 3),
+      scale: () => anime.random(1, 2),
       duration: 2500,
       delay: anime.stagger(15),
       //   complete: animateBlocks,
@@ -130,9 +130,9 @@ const Block = (props: BlockProps) => {
   // return <div className={cx(styles.block(blockColor), "block-anime")}></div>;
   return (
     <div
-      className="absolute w-20 h-20 rounded-full -z-10
+      className="absolute w-10 h-10 rounded-full -z-10
       -translate-x-1/2 -translate-y-1/2 t-1/2 left-1/2
-      bg-opacity-40 bg-blue-200 shadow-custom
+      bg-opacity-40 bg-blue-200 shadow-custom md:w-20 md:h-20
       block-anime "
     ></div>
   );
