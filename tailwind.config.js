@@ -1,5 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-const dir = String(process.env.BACKEND_URL);
+const prod = process.env.NODE_ENV === "production";
+const BACKEND_URL = prod ? "/repository-Name" : "";
+const dir = String(BACKEND_URL);
 module.exports = {
   mode: "jit",
   content: [
@@ -26,9 +28,15 @@ module.exports = {
     },
     extend: {
       backgroundImage: (theme) => ({
-        "portfolio-img": "url('${dir}/img/portfolio_main.png')",
-        "portfolio-img": "url('${dir}/img/portfolio_main.png')",
-        "chat-img": "url('${dir}/img/chat_main.png')",
+        "portfolio-img": "url('/img/portfolio_main.png')".replace(
+          "/img",
+          dir + "/img"
+        ),
+        "portfolio-img": "url('/img/portfolio_main.png')".replace(
+          "/img",
+          dir + "/img"
+        ),
+        "chat-img": "url('/img/chat_main.png')".replace("/img", dir + "/img"),
       }),
       animation: {
         slideIn: "slideIn 1s ease-in forwards",

@@ -17,7 +17,9 @@ export default function Home() {
   // const router = useRouter();
   // const hrefContact: string = "/page/mail";
 
-  const dir = String(process.env.BACKEND_URL);
+  const prod = process.env.NODE_ENV === "production";
+  const BACKEND_URL = prod ? "/repository-Name" : "";
+  const dir = String(BACKEND_URL);
 
   const frontEndDatas: Data[] = [
     { skill: "React", value: 3 },
