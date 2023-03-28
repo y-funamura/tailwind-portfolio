@@ -44,6 +44,7 @@ export default function Home() {
   ];
 
   const chatImg: imgs = [dir + "img/chat1.bmp", dir + "img/chat2.bmp"];
+  const chatGPTImg: imgs = [dir + "img/chatGPT1.bmp", dir + "img/chatGPT2.bmp"];
 
   const [headerClassNm, setHeaderClassNm] = useState(
     "z-30 sticky top-0 bg-opacity-50 bg-blue-100 text-gray-700 h-16"
@@ -242,7 +243,7 @@ export default function Home() {
         <div className="flex flex-wrap justify-evenly my-6 w-full">
           <div className="flex items-center flex-col">
             <ModalBtn
-              className=" bg-gray-100  rounded-lg shadow-md 
+              className=" bg-gray-100  rounded-lg shadow-md shadow-black
               hover:scale-110 duration-500 hover:brightness-105
               bg-portfolio-img bg-contain bg-no-repeat w-96 h-[16rem] m-6"
               modalClick={() => modalClick("Modal1")}
@@ -251,7 +252,7 @@ export default function Home() {
           </div>
           <div className="flex items-center flex-col">
             <ModalBtn
-              className=" bg-gray-100  rounded-lg shadow-md
+              className=" bg-gray-100  rounded-lg shadow-md shadow-black
               hover:scale-110 duration-500 hover:brightness-105
               bg-chat-img bg-contain bg-no-repeat w-96 h-[16rem] m-6"
               modalClick={() => modalClick("Modal2")}
@@ -260,12 +261,12 @@ export default function Home() {
           </div>
           <div className="flex items-center flex-col">
             <ModalBtn
-              className=" bg-gray-100  rounded-lg shadow-md
+              className=" bg-gray-100  rounded-lg shadow-md shadow-black
               hover:scale-110 duration-500 hover:brightness-105
-              bg-portfolio-img bg-cover bg-no-repeat w-96 h-[16rem] m-6"
+              bg-chatgpt-img bg-cover bg-no-repeat w-96 h-[16rem] m-6"
               modalClick={() => modalClick("Modal3")}
             ></ModalBtn>
-            <p className="font-bold">ポートフォリオ</p>
+            <p className="font-bold">ChatGPT</p>
           </div>
         </div>
       </section>
@@ -343,8 +344,12 @@ export default function Home() {
         readComplete={readComplete}
       >
         <div className="lg:w-2/5 w-10/12 lg:m-6 mt-6 text-white">
-          <h1 className="mb-6 font-bold text-xl">チャットアプリ</h1>
-          <p className="mb-6">こ</p>
+          <h1 className="mb-6 font-bold text-xl">ChatGPT</h1>
+          <p className="mb-6">
+            OpenAIのAPIでChatGPTのようなアプリを作成しました。
+            せっかくなのでできる限りChatGPTにコードを生成してもらい作り上げました。
+            画像を作成することもできるようなので改めて作成してみようと思います。
+          </p>
           <p
             className="my-auto flex items-center
               after:flex-grow after:h-px after:bg-white after:mx-1
@@ -352,11 +357,11 @@ export default function Home() {
           >
             使用言語など
           </p>
-          <p>React、Typescript、Material UI、Firebase</p>
+          <p>Next.js、TailWindCSS、OpenAI</p>
         </div>
         {/* <div className="lg:w-3/5 w-10/12 lg:mt-3  mx-6 mt-3 h-full "> */}
         <div className="w-full lg:my-8">
-          <Slider props={portfolioImg} />
+          <Slider props={chatGPTImg} />
         </div>
         {/* </div> */}
       </ModalElement>

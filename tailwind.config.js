@@ -32,7 +32,7 @@ module.exports = {
           "/img",
           dir + "/img"
         ),
-        "portfolio-img": "url('/img/portfolio_main.png')".replace(
+        "chatgpt-img": "url('/img/chatGPT_main.png')".replace(
           "/img",
           dir + "/img"
         ),
