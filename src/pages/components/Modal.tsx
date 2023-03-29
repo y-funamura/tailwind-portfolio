@@ -15,15 +15,15 @@ const Modal: FC<ModalType> = ({ children, modalClick, readComplete }) => {
   // useModalScrollLock({ isModalOpen });
 
   // 下記の方法でスクロール制御を行うとiOSでスクロールできてしまうので使用しないことにした。
-  // const stopScrollingBackContent = () => {
-  //   document.body.style.overflow = "hidden";
+  const stopScrollingBackContent = () => {
+    document.body.style.overflow = "hidden";
 
-  //   return () => {
-  //     document.body.style.overflow = "auto";
-  //   };
-  // };
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  };
 
-  // useEffect(stopScrollingBackContent, []);
+  useEffect(stopScrollingBackContent, []);
 
   return (
     <>

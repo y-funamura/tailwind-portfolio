@@ -2,7 +2,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { Options } from "@splidejs/splide";
 
 import "@splidejs/react-splide/css";
-import { FC, useRef } from "react";
+import { FC, useEffect } from "react";
 import Image from "next/image";
 
 // または、ほかのテーマ
@@ -17,32 +17,41 @@ export type imgs = img[];
 const Slider: FC<{ props: img[] }> = ({ props = ["img"] }) => {
   const images: string[] = [...props];
 
+  // const mainOptions: Options = {
+  //   type: "loop",
+  //   rewind: true,
+  //   perPage: 1,
+  //   perMove: 1,
+  //   gap: "1rem",
+  //   pagination: true,
+  //   height: "27.8125rem",
+  // };
   const mainOptions: Options = {
-    type: "loop",
-    perPage: 1,
-    perMove: 1,
+    type: "fade",
+    rewind: true,
+    lazyLoad: "sequential",
+    // perPage: 3,
+    // perMove: 1,
     gap: "1rem",
-    pagination: false,
+    pagination: true,
+    autoplay: true,
+    interval: 2000,
+    speed: 400,
+    // autoWidth: true,
+    // autoheight: true,
     height: "27.8125rem",
-  };
-
-  const mainRef = useRef<Splide>(null);
-
-  const handleThumbs = (id: number) => {
-    if (mainRef.current) {
-      mainRef.current.go(id);
-    }
+    // cover: true,
   };
 
   return (
     <>
-      <Splide options={mainOptions} ref={mainRef}>
+      <Splide options={mainOptions}>
         {images.map((imgStr, i) => {
           return (
             <SplideSlide key={i}>
               <img
                 key={i}
-                className="slide-img object-contain m-auto"
+                className="slide-img m-auto"
                 // layout="fill"
                 src={imgStr}
                 alt=""

@@ -50,3 +50,7 @@ a {
   opacity: 0;
   background-color: transparent;
 }
+
+.ReactModal__Body--open {
+  position: fixed;
+}

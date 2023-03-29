@@ -1,7 +1,5 @@
 "use client";
-// import icon from ",/asets/img/icon2.jpg";
-// import Link from "next/link";
-// import { useRouter } from "next/navigation";
+
 import "tailwindcss/tailwind.css";
 import { useEffect, useState } from "react";
 import scrollFadeIn from "./components/util/scrollFadeIn";
@@ -14,9 +12,6 @@ import ModalElement from "./components/ModalElement";
 import Image from "next/image";
 
 export default function Home() {
-  // const router = useRouter();
-  // const hrefContact: string = "/page/mail";
-
   const prod = process.env.NODE_ENV === "production";
   const BACKEND_URL = prod ? "/tailwind-portfolio/" : "";
   const dir = String(BACKEND_URL);
@@ -44,7 +39,8 @@ export default function Home() {
   ];
 
   const chatImg: imgs = [dir + "img/chat1.bmp", dir + "img/chat2.bmp"];
-  const chatGPTImg: imgs = [dir + "img/chatGPT1.bmp", dir + "img/chatGPT2.bmp"];
+  const chatGPTImg: imgs = [dir + "img/chatGPT1.bmp"];
+  // const chatGPTImg: imgs = [dir + "img/chatGPT1.bmp", dir + "img/chatGPT2.bmp"];
 
   const [headerClassNm, setHeaderClassNm] = useState(
     "z-30 sticky top-0 bg-opacity-50 bg-blue-100 text-gray-700 h-16"
@@ -243,8 +239,8 @@ export default function Home() {
         <div className="flex flex-wrap justify-evenly my-6 w-full">
           <div className="flex items-center flex-col">
             <ModalBtn
-              className=" bg-gray-100  rounded-lg shadow-md shadow-black
-              hover:scale-110 duration-500 hover:brightness-105
+              className=" bg-gray-100  rounded-lg shadow-md shadow-slate-400
+              hover:scale-110 duration-400 hover:brightness-105
               bg-portfolio-img bg-contain bg-no-repeat w-96 h-[16rem] m-6"
               modalClick={() => modalClick("Modal1")}
             ></ModalBtn>
@@ -252,8 +248,8 @@ export default function Home() {
           </div>
           <div className="flex items-center flex-col">
             <ModalBtn
-              className=" bg-gray-100  rounded-lg shadow-md shadow-black
-              hover:scale-110 duration-500 hover:brightness-105
+              className=" bg-gray-100  rounded-lg shadow-md shadow-slate-400
+              hover:scale-110 duration-400 hover:brightness-105
               bg-chat-img bg-contain bg-no-repeat w-96 h-[16rem] m-6"
               modalClick={() => modalClick("Modal2")}
             ></ModalBtn>
@@ -261,8 +257,8 @@ export default function Home() {
           </div>
           <div className="flex items-center flex-col">
             <ModalBtn
-              className=" bg-gray-100  rounded-lg shadow-md shadow-black
-              hover:scale-110 duration-500 hover:brightness-105
+              className=" bg-gray-100  rounded-lg shadow-md shadow-slate-400
+              hover:scale-110 duration-400 hover:brightness-105
               bg-chatgpt-img bg-cover bg-no-repeat w-96 h-[16rem] m-6"
               modalClick={() => modalClick("Modal3")}
             ></ModalBtn>
