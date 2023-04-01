@@ -31,8 +31,9 @@ const Modal: FC<ModalType> = ({ children, modalClick, readComplete }) => {
         isOpen={true}
         id={MODAL_ID}
         closeTimeoutMS={200}
+        ariaHideApp={false}
         className={{
-          base: "content-base overflow-auto  lg:h-2/3 h-5/6",
+          base: "content-base overflow-auto h-[35rem]",
           afterOpen: "content-after",
           beforeClose: "content-before",
         }}

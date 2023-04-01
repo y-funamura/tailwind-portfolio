@@ -107,6 +107,7 @@ const Mail: FC<MailType> = ({
           // id={MODAL_ID}
           contentLabel="問合せフォーム"
           isOpen={isModalOpen}
+          ariaHideApp={false}
           // style={customStyles}
           // onAfterOpen={afterOpenModal}
           onRequestClose={modalClick}
@@ -117,7 +118,10 @@ const Mail: FC<MailType> = ({
               className="max-w-md mx-auto my-8
             bg-blue-100 p-5 rounded-md shadow-sm"
             > */}
-          <div className="p-6 w-[28rem] bg-blue-100 rounded-xl shadow-lg shadow-slate-500">
+          <div
+            className="p-6 w-[28rem] bg-blue-100 rounded-xl shadow-lg shadow-slate-300
+          border-blue-200 border-2"
+          >
             <div className="text-center">
               <h2 className="my-3 text-3xl font-semibold text-gray-700">
                 お問合せフォーム

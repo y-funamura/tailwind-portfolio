@@ -47,6 +47,7 @@ export default function Home() {
   );
 
   const HeaderChange = (isModal: boolean) => {
+    console.log(isModal);
     isModal
       ? setHeaderClassNm("z-30 sticky top-0 bg-opacity-50 text-gray-700 h-16")
       : setHeaderClassNm(
@@ -87,11 +88,16 @@ export default function Home() {
 
   return (
     <>
-      <header className={headerClassNm}>
-        <div className="flex bg-blue-300 bg-opacity-5 border-b border-black">
+      <header
+        className={`w-full h-16 bg-opacity-75 border-b border-black
+                bg-blue-200 text-gray-700 fixed top-0
+                ${modalOpen ? "-z-30" : "z-30"}`}
+      >
+        {/* <div className="flex bg-blue-300 bg-opacity-5 border-b border-black */}
+        <div className="flex ">
           <a
             href="#"
-            className="mx-2 text-gray-900 font-bold
+            className="mx-2 text-gray-900 font-bold 
             animate-rotate-in-center text-center"
           >
             <div className="">
@@ -105,7 +111,7 @@ export default function Home() {
             <a
               href="#"
               className=" hover:text-white 
-            hover:bg-green-400 hover:shadow-black hover:shadow-sm  hover:font-black
+            hover:bg-blue-400 hover:shadow-black hover:shadow-sm  hover:font-black
               duration-700 ease-out flex items-center"
             >
               <div className="md:px-6 px-3 w-full">Home</div>
@@ -113,7 +119,7 @@ export default function Home() {
             <a
               href="#about"
               className=" hover:text-white
-            hover:bg-green-400 hover:shadow-black hover:shadow-sm  hover:font-black
+            hover:bg-blue-400 hover:shadow-black hover:shadow-sm  hover:font-black
               duration-700 ease-out flex items-center"
             >
               <div className="md:px-6 px-3">About</div>
@@ -121,7 +127,7 @@ export default function Home() {
             <a
               href="#works"
               className=" hover:text-white 
-            hover:bg-green-400 hover:shadow-black hover:shadow-sm  hover:font-black
+            hover:bg-blue-400 hover:shadow-black hover:shadow-sm  hover:font-black
               duration-700 ease-out flex items-center"
             >
               <div className="md:px-6 px-3">Works</div>
@@ -129,14 +135,14 @@ export default function Home() {
             <a
               href="#skill"
               className="  hover:text-white 
-              hover:bg-green-400 hover:shadow-black hover:shadow-sm  hover:font-black
+              hover:bg-blue-400 hover:shadow-black hover:shadow-sm  hover:font-black
               duration-700 ease-out flex items-center"
             >
               <div className="md:px-6 px-3">Skills</div>
             </a>
             <a
               className=" hover:text-white hover:text-base hover:cursor-pointer
-            hover:bg-green-400 hover:shadow-black hover:shadow-sm  hover:font-black
+            hover:bg-blue-400 hover:shadow-black hover:shadow-sm  hover:font-black
               duration-700 ease-out flex items-center"
               onClick={() => modalClick("Contact")}
             >
@@ -191,7 +197,7 @@ export default function Home() {
             ソース管理はGitHub、プロジェクト管理はRedmineです。
           </p>
         </div>
-        <div className="flex justify-center mt-6">
+        {/* <div className="flex justify-center mt-6">
           <button
             className="text-white bg-green-500 border-0 py-2 px-6 focus:outline-none
                 hover:bg-green-600 rounded text-lg"
@@ -199,7 +205,7 @@ export default function Home() {
           >
             Contact
           </button>
-        </div>
+        </div> */}
       </section>
 
       <section
@@ -240,7 +246,7 @@ export default function Home() {
           <div className="flex items-center flex-col">
             <ModalBtn
               className=" bg-gray-100  rounded-lg shadow-md shadow-slate-400
-              hover:scale-110 duration-400 hover:brightness-105
+              hover:scale-110 duration-1000 hover:brightness-105
               bg-portfolio-img bg-contain bg-no-repeat w-96 h-[16rem] m-6"
               modalClick={() => modalClick("Modal1")}
             ></ModalBtn>
@@ -249,7 +255,7 @@ export default function Home() {
           <div className="flex items-center flex-col">
             <ModalBtn
               className=" bg-gray-100  rounded-lg shadow-md shadow-slate-400
-              hover:scale-110 duration-400 hover:brightness-105
+              hover:scale-110 duration-1000 hover:brightness-105
               bg-chat-img bg-contain bg-no-repeat w-96 h-[16rem] m-6"
               modalClick={() => modalClick("Modal2")}
             ></ModalBtn>
@@ -258,7 +264,7 @@ export default function Home() {
           <div className="flex items-center flex-col">
             <ModalBtn
               className=" bg-gray-100  rounded-lg shadow-md shadow-slate-400
-              hover:scale-110 duration-400 hover:brightness-105
+              hover:scale-110 duration-1000 hover:brightness-105
               bg-chatgpt-img bg-cover bg-no-repeat w-96 h-[16rem] m-6"
               modalClick={() => modalClick("Modal3")}
             ></ModalBtn>
