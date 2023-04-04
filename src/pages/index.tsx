@@ -29,7 +29,7 @@ export default function Home() {
     { skill: "C#", value: 4 },
     { skill: "C++", value: 2 },
     { skill: "COBOL", value: 2 },
-    { skill: "PHP", value: 1 },
+    { skill: "SQLServer", value: 4 },
   ];
 
   const portfolioImg: imgs = [
